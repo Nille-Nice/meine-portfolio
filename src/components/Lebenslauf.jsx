@@ -185,6 +185,7 @@ export default function Lebenslauf() {
               src={currentPhase.imageSrc}
               alt={currentPhase.title}
               className="w-full max-w-xs md:max-w-sm object-contain"
+              loading="lazy"
             />
           </div>
 

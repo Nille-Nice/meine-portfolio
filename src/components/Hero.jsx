@@ -220,30 +220,35 @@ export default function Hero() {
             src="/images/portrait.png"
             alt="Portrait"
             className="w-full h-auto relative z-20 group-hover:filter-chaos"
+            loading="lazy"
           />
           {/* Red-Glitch */}
           <img
             src="/images/portrait.png"
             alt="Glitch Red"
             className="w-full h-auto absolute top-0 left-0 z-30 opacity-0 group-hover:opacity-60 filter invert-[30%] sepia-[100%] saturate-[800%] hue-rotate-[330deg] brightness-[150%] contrast-[150%] animate-chaos-glitch pointer-events-none"
+            loading="lazy"
           />
           {/* Blue-Glitch */}
           <img
             src="/images/portrait.png"
             alt="Glitch Blue"
             className="w-full h-auto absolute top-0 left-0 z-30 opacity-0 group-hover:opacity-60 filter invert-[30%] sepia-[100%] saturate-[800%] hue-rotate-[190deg] brightness-[150%] contrast-[150%] animate-chaos-glitch pointer-events-none"
+            loading="lazy"
           />
           {/* Green-Glitch */}
           <img
             src="/images/portrait.png"
             alt="Glitch Green"
             className="w-full h-auto absolute top-0 left-0 z-30 opacity-0 group-hover:opacity-40 filter hue-rotate-[90deg] brightness-[180%] contrast-[120%] animate-chaos-glitch2 pointer-events-none"
+            loading="lazy"
           />
           {/* Pink-Glitch */}
           <img
             src="/images/portrait.png"
             alt="Glitch Pink"
             className="w-full h-auto absolute top-0 left-0 z-30 opacity-0 group-hover:opacity-40 filter hue-rotate-[300deg] brightness-[180%] contrast-[120%] animate-chaos-glitch3 pointer-events-none"
+            loading="lazy"
           />
         </div>
         {/* Overlay mit Code */}

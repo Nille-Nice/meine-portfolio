@@ -96,7 +96,7 @@ export default function Projects() {
             ref={leftTVRef}
             style={{ textDecoration: 'none' }}
           >
-            <img src="/images/tv.png" alt="Projekt Fernseher 1" className="w-full h-auto relative z-10" />
+            <img src="/images/tv.png" alt="Projekt Fernseher 1" className="w-full h-auto relative z-10" loading="lazy" />
             <video
               src="/images/homeclip.mp4"
               loop
@@ -113,7 +113,7 @@ export default function Projects() {
 
           {/* Zweiter Fernseher */}
           <div ref={rightTVRef} className="relative w-full max-w-xl z-10">
-            <img src="/images/tv.png" alt="Projekt Fernseher 2" className="w-full h-auto relative z-10" />
+            <img src="/images/tv.png" alt="Projekt Fernseher 2" className="w-full h-auto relative z-10" loading="lazy" />
             <video
               src="/images/tv3.mp4"
               loop
@@ -129,7 +129,7 @@ export default function Projects() {
 
         {/* Tastatur Bild */}
         <div className="w-full max-w-[300px] -mt-12 relative z-10">
-          <img src="/images/tastatur.png" alt="Tastatur" className="w-full h-auto" />
+          <img src="/images/tastatur.png" alt="Tastatur" className="w-full h-auto" loading="lazy" />
         </div>
 
         {/* Projektbeschreibungen */}

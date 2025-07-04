@@ -92,6 +92,7 @@ export default function BeyondTheCode() {
             src="/images/beach.png" 
             alt="Beach Background" 
             className="w-full h-auto object-contain z-10"
+            loading="lazy"
           />
           
           {/* Figur am Strand */}
@@ -100,6 +101,7 @@ export default function BeyondTheCode() {
               src="/images/urlaub2.png" 
               alt="Figure at the beach" 
               className="w-48 h-auto"
+              loading="lazy"
             />
           </div>
         </div>
