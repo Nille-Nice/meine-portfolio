@@ -10,7 +10,10 @@ export default function Navbar() {
     { id: 2, name: 'about', to: 'about' },
     { id: 3, name: 'tech stack', to: 'tech-stack' },
     { id: 4, name: 'soft skills', to: 'soft-skills' },
-    { id: 5, name: 'contact', to: 'contact' },
+    { id: 5, name: 'current projects', to: 'projects' },
+    { id: 6, name: 'behind the code', to: 'beyond-the-code' },
+    { id: 7, name: 'resume', to: 'resume' },
+    { id: 8, name: 'contact', to: 'contact' },
   ];
 
   return (

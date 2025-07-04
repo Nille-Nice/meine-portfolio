@@ -116,7 +116,7 @@ export default function SoftSkills() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-black py-20 px-6 md:px-16 text-white font-mono relative overflow-hidden">
+    <section ref={sectionRef} name="soft-skills" className="bg-black py-20 px-6 md:px-16 text-white font-mono relative overflow-hidden">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-widest text-neon animate-neon-flicker">
         SOFT SKILLS
       </h2>

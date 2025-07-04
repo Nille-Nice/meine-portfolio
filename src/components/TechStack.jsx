@@ -57,7 +57,7 @@ export default function TechStack() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-black py-20 px-6 md:px-16 text-white font-mono">
+    <section ref={sectionRef} name="tech-stack" className="bg-black py-20 px-6 md:px-16 text-white font-mono">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-widest text-neon animate-neon-flicker">
         TECH STACK
       </h2>

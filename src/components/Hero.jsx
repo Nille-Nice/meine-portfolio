@@ -135,7 +135,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-black text-textDark overflow-hidden">
+    <section name="home" className="relative min-h-screen bg-black text-textDark overflow-hidden">
       
       {/* ✨ Shooting Stars Hintergrund */}
       <div className="night">

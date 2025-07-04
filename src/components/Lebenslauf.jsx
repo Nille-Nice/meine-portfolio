@@ -9,15 +9,14 @@ const journeyEvents = [
     title: 'Geburt',
     period: '15.06.1989',
     description: 'Geboren im schönen Flensburg in Schleswig-Holstein.',
-    icon: <FaBaby />,
-    imageSrc: '/images/kinderwagen.png'
+    icon: <FaBaby />,  
   },
   {
     title: 'Jugend',
     period: 'Frühe Jahre',
     description: 'Sportlich aktiv: Fußball war die größte Leidenschaft',
     icon: <FaChild />,
-    imageSrc: '/images/kind.png'
+    imageSrc: '/images/fubakind.png'
   },
   {
     title: 'Teenagerzeit',
@@ -29,7 +28,7 @@ const journeyEvents = [
   {
     title: 'Australien',
     period: '2008',
-    description: 'Mit 19 ging es raus von zu Hause ans andere Ende der Welt: Australien. Die Welt wurde größer, Englisch sehr wichtig.',
+    description: 'Mit 19 ging es raus von zu Hause ans andere Ende der Welt: Australien. Die Welt wurde größer und Englisch sehr wichtig für mein Leben.',
     icon: <FaPlaneDeparture />,
     imageSrc: '/images/backpacker.jpg'
   },
@@ -50,7 +49,7 @@ const journeyEvents = [
   {
     title: 'Berufserfahrung',
     period: '2014-2021',
-    description: 'Diverse Jobs: Barkeeper, Einzelhandel, Bühnenbau, Corona-Stationsarbeit (nicht illegal!). Gleichzeitig wuchs durch die Musikproduktion das Interesse am Programmieren.',
+    description: 'Diverse Jobs: Barkeeper, Einzelhandel, Bühnenbau, Corona-Stationsarbeit (nicht illegal!). In meiner Freizeit wuchs zuerst das Interresse an digitaler Musikproduktion und dann das Interesse am Programmieren.',
     icon: <FaBriefcase />,
     imageSrc: '/images/studionille.png'
   },
@@ -136,7 +135,7 @@ export default function Lebenslauf() {
   }, []); // Run once on mount
 
   return (
-    <section ref={sectionRef} className="bg-black py-20 px-6 md:px-16 text-white font-mono relative overflow-hidden">
+    <section ref={sectionRef} name="resume" className="bg-black py-20 px-6 md:px-16 text-white font-mono relative overflow-hidden">
       {/* ✨ Shooting Stars Hintergrund */}
       <div className="night absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => {

@@ -61,7 +61,7 @@ export default function BeyondTheCode() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-black py-20 px-6 md:px-16 text-white font-mono relative overflow-hidden">
+    <section ref={sectionRef} name="beyond-the-code" className="bg-black py-20 px-6 md:px-16 text-white font-mono relative overflow-hidden">
       {/* ✨ Shooting Stars Hintergrund */}
       <div className="night absolute inset-0 z-0 opacity-10 pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => {
