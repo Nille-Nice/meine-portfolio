@@ -10,20 +10,21 @@ const journeyEvents = [
     period: '15.06.1989',
     description: 'Geboren im schönen Flensburg in Schleswig-Holstein.',
     icon: <FaBaby />,  
+    imageSrc: '/images/kinderwagen.png'
   },
   {
     title: 'Jugend',
     period: 'Frühe Jahre',
     description: 'Sportlich aktiv: Fußball war die größte Leidenschaft',
     icon: <FaChild />,
-    imageSrc: '/images/fubakind.png'
+    imageSrc: '/images/fubanille2.png'
   },
   {
     title: 'Teenagerzeit',
     period: 'Spätere Jugend',
     description: 'Skateboarding war nun angesagt. Das Editieren von den dazugehörigen Videos war mein erstes "Hobby am Computer".',
     icon: <FaMusic />,
-    imageSrc: '/images/skate.jpg'
+    imageSrc: '/images/skatenille.png'
   },
   {
     title: 'Australien',

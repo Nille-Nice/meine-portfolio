@@ -98,7 +98,7 @@ export default function Projects() {
           >
             <img src="/images/tv.png" alt="Projekt Fernseher 1" className="w-full h-auto relative z-10" />
             <video
-              src="/images/tv2.mp4"
+              src="/images/homeclip.mp4"
               loop
               muted
               autoPlay
