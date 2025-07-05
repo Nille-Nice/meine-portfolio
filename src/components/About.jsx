@@ -1,16 +1,33 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+function KontaktModal({ open, onClose }) {
+  if (!open) return null;
+  const email = ['nilsnarten', 'yahoo', 'de'].join('@').replace('@yahoo@', '@yahoo.');
+  return (
+    <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black bg-opacity-70">
+      <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full relative">
+        <button onClick={onClose} className="absolute top-2 right-2 text-gray-500 hover:text-black text-2xl">&times;</button>
+        <h2 className="text-xl font-bold mb-4 text-black">Kontakt</h2>
+        <div className="text-black text-sm space-y-2">
+          <div><span className="font-semibold">Name:</span> Nils Narten</div>
+          <div><span className="font-semibold">E-Mail:</span> <span className="underline">{email}</span></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function About() {
   const welcomeRef = useRef(null);
   const splitTextRef = useRef(null);
   const imageRef = useRef(null);
   const textRef = useRef(null);
+  const [showKontakt, setShowKontakt] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -146,18 +163,18 @@ export default function About() {
             Hi, ich bin <span className="text-green-400">Nils</span> – ein ambitionierter <span className="text-pink-400">Webentwickler</span> aus <span className="text-blue-400">Hamburg</span>. Ich bin ausgebildeter Fachinformatiker für Anwendugsentwicklung. Kreative Desings und bewegende Animationen liegen mir besonders am Herzen.
           </p>
           <p className="text-gray-300">
-            Diese <span className="text-green-400">Website</span> dient dient als mein Port-Folio, im Grunde genommen <span className="text-blue-400"> meine Bewerbung</span> für meinen Traumjob in <span className="text-pink-400">deiner Firma!</span> 
+            Diese <span className="text-green-400">Website</span>  dient als mein Port-Folio, im Grunde genommen <span className="text-blue-400"> meine Bewerbung</span> für meinen Traumjob in <span className="text-pink-400">deiner Firma!</span> 
           </p>
           <div className="flex justify-center mt-8">
-            <a
-              href="#kontakt"
+            <button
+              onClick={() => setShowKontakt(true)}
               className="relative inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold text-base shadow-[0_0_16px_2px_rgba(56,189,248,0.7)] transition-all duration-300 hover:from-pink-500 hover:to-yellow-400 hover:scale-105 hover:shadow-[0_0_32px_6px_rgba(236,72,153,0.7)] focus:outline-none"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0l-7.5-4.615A2.25 2.25 0 012.25 6.993V6.75" />
               </svg>
               Kontakt aufnehmen
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -165,6 +182,7 @@ export default function About() {
       {/* Papierflieger Animation */}
       {/* Die alte Papierflieger-Animation wird entfernt, da sie durch das UFO in ScrollAnimation.jsx ersetzt wurde. */}
       {/* Hier war zuvor der Code für die Papierflieger-Animation. */}
+      <KontaktModal open={showKontakt} onClose={() => setShowKontakt(false)} />
     </section>
   );
 }

@@ -94,9 +94,9 @@ export default function Footer() {
       <div className="relative z-20 text-gray-900 text-center p-6 font-['NASA']">
         <button onClick={() => setShowImpressum(true)} className="text-lg font-bold mb-4 hover:underline focus:outline-none">Impressum</button>
         <ul className="text-sm space-y-2 mb-4">
-          <li><a href="#" className="hover:text-gray-700 transition-colors duration-200">Datenschutz</a></li>
-          <li><a href="#" className="hover:text-gray-700 transition-colors duration-200">Rechtliches</a></li>
-          <li><a href="#" className="hover:text-gray-700 transition-colors duration-200">Kontakt</a></li>
+          <li><button onClick={() => setShowImpressum(true)} className="hover:text-gray-700 transition-colors duration-200 bg-transparent border-none cursor-pointer">Datenschutz</button></li>
+          <li><button onClick={() => setShowImpressum(true)} className="hover:text-gray-700 transition-colors duration-200 bg-transparent border-none cursor-pointer">Rechtliches</button></li>
+          <li><button onClick={() => setShowImpressum(true)} className="hover:text-gray-700 transition-colors duration-200 bg-transparent border-none cursor-pointer">Kontakt</button></li>
         </ul>
         <p className="text-xs mt-6 text-gray-600">&copy; {new Date().getFullYear()} Nils Narten. All rights reserved.</p>
       </div>

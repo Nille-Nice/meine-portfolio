@@ -10,7 +10,7 @@ const journeyEvents = [
     period: '15.06.1989',
     description: 'Geboren im schönen Flensburg in Schleswig-Holstein.',
     icon: <FaBaby />,  
-    imageSrc: '/images/kinderwagen.png'
+    imageSrc: '/images/Kinderwagen.png'
   },
   {
     title: 'Jugend',

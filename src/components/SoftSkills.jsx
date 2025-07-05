@@ -202,7 +202,7 @@ export default function SoftSkills() {
               viewport={{ once: true }}
               className="text-gray-300"
             >
-              Dabei arbeite ich am liebsten im <span className="text-pink-400">Team</span>. Ob im Job oder privat: Ich liebe es, gemeinsam Ideen zu entwickeln und umzusetzen.
+              Dabei arbeite ich am liebsten im <span className="text-pink-400">Team</span>. Ob im Job oder privat: Ich liebe es gemeinsam Ideen zu entwickeln und umzusetzen.
             </motion.p>
 
             <motion.p 

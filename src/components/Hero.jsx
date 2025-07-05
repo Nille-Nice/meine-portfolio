@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import TypingText from './TypingText';
-import AnimatedLetters from './AnimatedLetters';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
@@ -48,7 +46,6 @@ export default function Hero() {
   const descriptionRef = useRef(null);
   const splitDescriptionRef = useRef(null);
   const portraitRef = useRef(null);
-  const [typingDone, setTypingDone] = useState(false);
   const [showKontakt, setShowKontakt] = useState(false);
 
   useEffect(() => {

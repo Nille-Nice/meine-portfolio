@@ -142,7 +142,7 @@ export default function Projects() {
             className="text-gray-300 mb-4"
           >
             <span className="text-neon font-bold">Projekt 1:</span><br />
-            In meiner Freizeit bastle ich an einem Projekt aus meinem musikalischen Umfeld. Für das <span className="text-green-400">Indie-Label ULMG music</span> entwickle ich eine Website mit integriertem <span className="text-pink-400">Shopify-Shop</span> für Merch. Die Seite funktioniert gleichzeitig als <span className="text-blue-400">Landingpage</span>, über die man direkt zu den Videos und <span className="text-neon">Spotify-Profilen</span> der einzelnen Künstler gelangt. Online ist das Ganze unter <a
+            In meiner Freizeit bastle ich an einem Projekt aus meinem musikalischen Umfeld. Für das <span className="text-green-400">Indie-Label ULMG music</span> entwickel ich eine Website mit integriertem <span className="text-pink-400">Shopify-Shop</span> für Merch. Die Seite funktioniert gleichzeitig als <span className="text-blue-400">Landingpage</span>, über die man direkt zu den Videos und <span className="text-neon">Spotify-Profilen</span> der einzelnen Künstler gelangt. Online ist das Ganze unter <a
               href="https://ulmg-music.com"
               target="_blank"
               rel="noopener noreferrer"

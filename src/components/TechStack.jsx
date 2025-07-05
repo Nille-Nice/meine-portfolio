@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -23,7 +23,7 @@ const skills = [
 
 export default function TechStack() {
   const sectionRef = useRef(null);
-  const [hoveredCard, setHoveredCard] = useState(null);
+
   const cardRefs = useRef([]);
 
   useEffect(() => {
@@ -69,8 +69,7 @@ export default function TechStack() {
             ref={el => cardRefs.current[idx] = el}
             className="tech-card group bg-black/30 backdrop-blur-md border border-white/10 p-4 rounded-lg text-center flex flex-col items-center justify-center aspect-square overflow-hidden relative
               hover:border-white/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-            onMouseEnter={() => setHoveredCard(idx)}
-            onMouseLeave={() => setHoveredCard(null)}
+
           >
             {/* Glänzender Overlay-Effekt */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
