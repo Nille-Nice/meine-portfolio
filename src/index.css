@@ -31,6 +31,7 @@ body {
   background: #000000;
   min-height: 100vh;
   overflow-x: hidden;
+  cursor: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="30" rx="10" ry="6" fill="%23b0c4de" stroke="%23222" stroke-width="2"/><rect x="14" y="10" width="12" height="18" rx="6" fill="%23e0e6ed" stroke="%23222" stroke-width="2"/><rect x="12" y="8" width="4" height="12" rx="2" fill="%23e0e6ed" stroke="%23222" stroke-width="2"/><rect x="24" y="8" width="4" height="12" rx="2" fill="%23e0e6ed" stroke="%23222" stroke-width="2"/><rect x="18" y="6" width="4" height="10" rx="2" fill="%23e0e6ed" stroke="%23222" stroke-width="2"/><ellipse cx="20" cy="32" rx="6" ry="2" fill="%23fff" opacity="0.5"/></svg>') 20 30, auto;
 }
 
 /* Gameboy Pixel Effect */
