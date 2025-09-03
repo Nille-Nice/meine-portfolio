@@ -71,7 +71,7 @@ const journeyEvents = [
   {
     title: 'Neustart',
     period: 'Aktuell',
-    description: 'Erfolgreicher Abschluss und nun suche ich nach DIR (diese Seite dient zum Bewerben).',
+    description: 'Erfolgreicher Abschluss und nun suche ich nach der nächsten Herausforderung in meinem Leben (diese Seite dient zum Bewerben).',
     icon: <FaSearch />,
     imageSrc: '/images/hireme2.png'
   },
@@ -136,27 +136,8 @@ export default function Lebenslauf() {
   }, []); // Run once on mount
 
   return (
-    <section ref={sectionRef} name="resume" className="bg-black py-20 px-6 md:px-16 text-white font-mono relative overflow-hidden">
-      {/* ✨ Shooting Stars Hintergrund */}
-      <div className="night absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => {
-          const top = Math.random() * 100;
-          const left = Math.random() * 100;
-          const delay = Math.random() * 5;
-          return (
-            <div
-              key={i}
-              className="shooting_star"
-              style={{
-                top: `${top}%`,
-                left: `${left}%`,
-                animationDelay: `${delay}s`
-              }}
-            />
-          );
-        })}
-      </div>
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-widest text-neon animate-neon-flicker relative z-10">
+    <section ref={sectionRef} name="resume" className="bg-background py-20 px-6 md:px-16 text-primaryDark font-mono relative overflow-hidden">
+              <h2 className="text-3xl md:text-4xl font-kinddaily text-center mb-12 tracking-widest text-primaryDark relative z-10">
         MEINE REISE
       </h2>
 
@@ -192,8 +173,8 @@ export default function Lebenslauf() {
           {/* Text Description */}
           <div className="w-full md:w-1/2 text-center md:text-left z-10">
             <h3 className="text-2xl font-bold mb-2 text-sky-400">{currentPhase.title}</h3>
-            <p className="text-base text-gray-300 mb-4">{currentPhase.period}</p>
-            <p className="text-gray-300 leading-relaxed">{currentPhase.description}</p>
+            <p className="text-base text-primaryDark mb-4">{currentPhase.period}</p>
+            <p className="text-primaryDark leading-relaxed">{currentPhase.description}</p>
 
             {currentPhase.title === 'Neustart' && (
               <div className="flex justify-center md:justify-start mt-8">

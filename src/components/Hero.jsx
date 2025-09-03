@@ -6,22 +6,18 @@ import { SplitText } from 'gsap/SplitText';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-// Hilfsfunktion zum Wrappen der Buchstaben
-function GlitchHeadline({ text }) {
-  return (
-    <span className="headline-glitch-group">
-      {text.split('').map((char, i) => (
-        <span key={i} className="relative inline-block">
-          <span className="headline-glitch-char z-10 relative">{char === ' ' ? '\u00A0' : char}</span>
-          {/* Ghost-Layer cyan */}
-          <span aria-hidden className="headline-glitch-ghost ghost-cyan absolute left-0 top-0 z-0 pointer-events-none">{char === ' ' ? '\u00A0' : char}</span>
-          {/* Ghost-Layer magenta */}
-          <span aria-hidden className="headline-glitch-ghost ghost-magenta absolute left-0 top-0 z-0 pointer-events-none">{char === ' ' ? '\u00A0' : char}</span>
-        </span>
-      ))}
-    </span>
-  );
-}
+// Hilfsfunktion zum Wrappen der Buchstaben (aktuell nicht verwendet)
+// function GlitchHeadline({ text }) {
+//   return (
+//     <span className="headline-glitch-group">
+//       {text.split('').map((char, i) => (
+//         <span key={i} className="relative inline-block">
+//           <span className="headline-glitch-char z-10 relative">{char === ' ' ? '\u00A0' : char}</span>
+//         </span>
+//       ))}
+//     </span>
+//   );
+// }
 
 function KontaktModal({ open, onClose }) {
   if (!open) return null;
@@ -150,27 +146,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section name="home" className="relative min-h-screen bg-black text-textDark overflow-hidden">
-      
-      {/* ✨ Shooting Stars Hintergrund */}
-      <div className="night">
-        {Array.from({ length: 20 }).map((_, i) => {
-          const top = Math.random() * 100;
-          const left = Math.random() * 100;
-          const delay = Math.random() * 5;
-          return (
-            <div
-              key={i}
-              className="shooting_star"
-              style={{
-                top: `${top}%`,
-                left: `${left}%`,
-                animationDelay: `${delay}s`
-              }}
-            />
-          );
-        })}
-      </div>
+    <section name="home" className="relative min-h-screen bg-background text-primaryDark overflow-hidden">
 
       {/* Layout-Container */}
       <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 py-24">
@@ -183,18 +159,25 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-[4rem] md:text-[8rem] lg:text-[10rem] font-black leading-[1] text-neon tracking-widest text-left animate-neon-flicker headline-glitch-group"
+            className="text-[4rem] md:text-[8rem] lg:text-[10rem] font-hype leading-[1] tracking-widest text-accent3 z-50 relative w-full max-w-2xl md:max-w-xl lg:max-w-2xl mx-0 pt-16"
           >
-            <GlitchHeadline text={"NILS"} />
-            <br />
-            <GlitchHeadline text={"NARTEN"} />
+            <div className="flex justify-between w-full">
+              {"NILS".split("").map((char, i) => (
+                <span key={i}>{char}</span>
+              ))}
+            </div>
+            <div className="flex justify-between w-full">
+              {"NARTEN".split("").map((char, i) => (
+                <span key={i}>{char}</span>
+              ))}
+            </div>
           </motion.h1>
 
           {/* Kontakt-Button */}
-          <div className="flex justify-center mb-3">
+          <div className="flex justify-center mt-16 mb-3">
             <button
               onClick={() => setShowKontakt(true)}
-              className="relative inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold text-base shadow-[0_0_16px_2px_rgba(56,189,248,0.7)] transition-all duration-300 hover:from-pink-500 hover:to-yellow-400 hover:scale-105 hover:shadow-[0_0_32px_6px_rgba(236,72,153,0.7)] focus:outline-none"
+              className="relative inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primaryDark text-background font-nasa text-base shadow transition-all duration-300 hover:bg-accent3 hover:text-background focus:outline-none"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0l-7.5-4.615A2.25 2.25 0 012.25 6.993V6.75" />
@@ -203,16 +186,6 @@ export default function Hero() {
             </button>
           </div>
 
-          {/* Scroll Down Hinweis */}
-          <div className="flex flex-col items-center mt-10 mb-8">
-            <span className="text-xs text-gray-400 tracking-widest uppercase mb-1">Scroll down</span>
-            <span className="animate-bounce text-gray-400">
-              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-down" viewBox="0 0 24 24">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <polyline points="19 12 12 19 5 12"></polyline>
-              </svg>
-            </span>
-          </div>
 
           <motion.div
             initial={{ width: 0 }}
@@ -225,7 +198,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="text-lg md:text-xl max-w-xl text-white font-mono bg-black/30 p-6 group"
+            className="text-lg md:text-xl max-w-xl text-primaryDark font-mono bg-accent1 p-6 group"
           >
             <h2
               ref={descriptionRef}
@@ -238,44 +211,14 @@ export default function Hero() {
       </div>
 
       {/* Bildbereich mit RGB-Glitch bei Hover */}
-      <div className="absolute bottom-0 w-[70vw] max-w-[700px] group select-none transition-transform duration-700 ease-out hover:scale-[1.08] hover:rotate-2 shrink-0 right-[-5%] lg:right-12">
+      <div className="absolute bottom-0 w-[70vw] max-w-[700px] group select-none transition-transform duration-700 ease-out hover:scale-[1.08] hover:rotate-2 shrink-0 right-[-5%] lg:right-12 z-10">
         <div className="relative w-full h-auto">
-          {/* Schwarzer Hintergrund gegen durchscheinende Sterne */}
-          <div className="absolute inset-0 bg-black/90 rounded-2xl z-10 pointer-events-none" />
           {/* Hauptbild */}
           <img
             ref={portraitRef}
             src="/images/portrait.png"
             alt="Portrait"
-            className="w-full h-auto relative z-20 group-hover:filter-chaos"
-            loading="lazy"
-          />
-          {/* Red-Glitch */}
-          <img
-            src="/images/portrait.png"
-            alt="Glitch Red"
-            className="w-full h-auto absolute top-0 left-0 z-30 opacity-0 group-hover:opacity-60 filter invert-[30%] sepia-[100%] saturate-[800%] hue-rotate-[330deg] brightness-[150%] contrast-[150%] animate-chaos-glitch pointer-events-none"
-            loading="lazy"
-          />
-          {/* Blue-Glitch */}
-          <img
-            src="/images/portrait.png"
-            alt="Glitch Blue"
-            className="w-full h-auto absolute top-0 left-0 z-30 opacity-0 group-hover:opacity-60 filter invert-[30%] sepia-[100%] saturate-[800%] hue-rotate-[190deg] brightness-[150%] contrast-[150%] animate-chaos-glitch pointer-events-none"
-            loading="lazy"
-          />
-          {/* Green-Glitch */}
-          <img
-            src="/images/portrait.png"
-            alt="Glitch Green"
-            className="w-full h-auto absolute top-0 left-0 z-30 opacity-0 group-hover:opacity-40 filter hue-rotate-[90deg] brightness-[180%] contrast-[120%] animate-chaos-glitch2 pointer-events-none"
-            loading="lazy"
-          />
-          {/* Pink-Glitch */}
-          <img
-            src="/images/portrait.png"
-            alt="Glitch Pink"
-            className="w-full h-auto absolute top-0 left-0 z-30 opacity-0 group-hover:opacity-40 filter hue-rotate-[300deg] brightness-[180%] contrast-[120%] animate-chaos-glitch3 pointer-events-none"
+            className="w-full h-auto relative z-20"
             loading="lazy"
           />
         </div>

@@ -116,31 +116,12 @@ export default function SoftSkills() {
   }, []);
 
   return (
-    <section ref={sectionRef} name="soft-skills" className="bg-black py-20 px-6 md:px-16 text-white font-mono relative overflow-hidden">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-widest text-neon animate-neon-flicker">
+    <section ref={sectionRef} name="soft-skills" className="bg-background py-20 px-6 md:px-16 text-primaryDark font-mono relative overflow-hidden">
+              <h2 className="text-3xl md:text-4xl font-kinddaily text-center mb-12 tracking-widest text-primaryDark">
         SOFT SKILLS
       </h2>
 
       <div className="max-w-6xl mx-auto relative flex flex-col items-center">
-        {/* ✨ Shooting Stars Hintergrund */}
-        <div className="night absolute inset-0 z-0">
-          {Array.from({ length: 20 }).map((_, i) => {
-            const top = Math.random() * 100;
-            const left = Math.random() * 100;
-            const delay = Math.random() * 5;
-            return (
-              <div
-                key={i}
-                className="shooting_star"
-                style={{
-                  top: `${top}%`,
-                  left: `${left}%`,
-                  animationDelay: `${delay}s`
-                }}
-              />
-            );
-          })}
-        </div>
 
         {/* Sofa Bild */}
         <div
@@ -172,9 +153,9 @@ export default function SoftSkills() {
               {hoveredSkill === idx && (
                 <div className={`absolute left-1/2 transform -translate-x-1/2 mt-2
                   transition-all duration-300 opacity-0 group-hover:opacity-100
-                  bg-black/80 p-3 rounded-lg w-48 text-sm`}>
-                  <h3 className="font-bold mb-1">{skill.title}</h3>
-                  <p className="text-gray-300">{skill.description}</p>
+                  bg-accent1 p-3 w-48 text-sm`}>
+                  <h3 className="font-bold mb-1 text-primaryDark">{skill.title}</h3>
+                  <p className="text-primaryDark">{skill.description}</p>
                 </div>
               )}
             </div>
@@ -182,14 +163,14 @@ export default function SoftSkills() {
         </div>
 
         {/* Beschreibungstext */}
-        <div className="w-full max-w-4xl mt-12 text-sm md:text-base">
+        <div className="w-full max-w-4xl mt-12 text-sm md:text-base bg-accent1 p-6">
           <div className="space-y-4">
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-gray-300"
+              className="text-primaryDark"
             >
               <span className="text-neon font-bold">Was man über mich wissen sollte:</span><br />
               Auf mich ist <span className="text-green-400">Verlass</span>. Wenn ich etwas anfange, ziehe ich es durch – <span className="text-blue-400">zielgerichtet</span> und mit klarem Fokus.
@@ -200,7 +181,7 @@ export default function SoftSkills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-gray-300"
+              className="text-primaryDark"
             >
               Dabei arbeite ich am liebsten im <span className="text-pink-400">Team</span>. Ob im Job oder privat: Ich liebe es gemeinsam Ideen zu entwickeln und umzusetzen.
             </motion.p>
@@ -210,7 +191,7 @@ export default function SoftSkills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="text-gray-300"
+              className="text-primaryDark"
             >
               <span className="text-neon">Kreativität</span> spielt dabei für mich eine zentrale Rolle – ich bringe ständig frische Impulse ein und denke gerne auch mal um die Ecke.
             </motion.p>
@@ -220,7 +201,7 @@ export default function SoftSkills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
-              className="text-gray-300"
+              className="text-primaryDark"
             >
               Ich bin offen für Neues, was sich nicht zuletzt in meiner <span className="text-blue-400">internationalen Erfahrung</span> widerspiegelt – durch Arbeit und Freundschaften über Grenzen hinweg.
             </motion.p>
@@ -230,7 +211,7 @@ export default function SoftSkills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
               viewport={{ once: true }}
-              className="text-gray-300"
+              className="text-primaryDark"
             >
               <span className="text-pink-400">Kommunikation</span> ist für mich der Schlüssel: direkt, aber immer respektvoll und freundlich.
             </motion.p>
@@ -240,7 +221,7 @@ export default function SoftSkills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
               viewport={{ once: true }}
-              className="text-gray-300"
+              className="text-primaryDark"
             >
               Und weil ich <span className="text-green-400">nahezu bilingual</span> bin, fühle ich mich in Meetings auf Englisch genauso wohl wie auf Deutsch.
             </motion.p>

@@ -45,28 +45,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative w-full h-[300px] bg-black flex flex-col justify-end items-center overflow-hidden">
-      
-      {/* ✨ Shooting Stars Hintergrund */}
-      <div className="night absolute inset-0 z-0 pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => {
-          const top = Math.random() * 100;
-          const left = Math.random() * 100;
-          const delay = Math.random() * 5;
-          return (
-            <div
-              key={i}
-              className="shooting_star"
-              style={{
-                top: `${top}%`,
-                left: `${left}%`,
-                animationDelay: `${delay}s`,
-                position: 'absolute'
-              }}
-            />
-          );
-        })}
-      </div>
+    <footer className="relative w-full h-[300px] bg-[#FCF7F8] flex flex-col justify-end items-center overflow-hidden">
 
       {/* 🚀 Rakete */}
       <img 
@@ -91,14 +70,14 @@ export default function Footer() {
       ></div>
         
       {/* 📄 Footer Content */}
-      <div className="relative z-20 text-gray-900 text-center p-6 font-['NASA']">
+      <div className="relative z-20 text-primaryDark text-center p-6 font-['NASA']">
         <button onClick={() => setShowImpressum(true)} className="text-lg font-bold mb-4 hover:underline focus:outline-none">Impressum</button>
         <ul className="text-sm space-y-2 mb-4">
-          <li><button onClick={() => setShowImpressum(true)} className="hover:text-gray-700 transition-colors duration-200 bg-transparent border-none cursor-pointer">Datenschutz</button></li>
-          <li><button onClick={() => setShowImpressum(true)} className="hover:text-gray-700 transition-colors duration-200 bg-transparent border-none cursor-pointer">Rechtliches</button></li>
-          <li><button onClick={() => setShowImpressum(true)} className="hover:text-gray-700 transition-colors duration-200 bg-transparent border-none cursor-pointer">Kontakt</button></li>
+          <li><button onClick={() => setShowImpressum(true)} className="hover:text-accent3 transition-colors duration-200 bg-transparent border-none cursor-pointer">Datenschutz</button></li>
+          <li><button onClick={() => setShowImpressum(true)} className="hover:text-accent3 transition-colors duration-200 bg-transparent border-none cursor-pointer">Rechtliches</button></li>
+          <li><button onClick={() => setShowImpressum(true)} className="hover:text-accent3 transition-colors duration-200 bg-transparent border-none cursor-pointer">Kontakt</button></li>
         </ul>
-        <p className="text-xs mt-6 text-gray-600">&copy; {new Date().getFullYear()} Nils Narten. All rights reserved.</p>
+        <p className="text-xs mt-6 text-primaryDark">&copy; {new Date().getFullYear()} Nils Narten. All rights reserved.</p>
       </div>
 
       {/* 🪐 Dekorative Sterne */}

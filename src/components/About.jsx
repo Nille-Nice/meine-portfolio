@@ -114,31 +114,13 @@ export default function About() {
   }, []); // Empty dependency array means this effect runs once on mount and cleans up on unmount
 
   return (
-    <section className="bg-black text-white py-24 px-8 md:px-16 lg:px-24 relative overflow-hidden">
-      {/* ⭐ Schritt 1: Shooting Stars Hintergrund */}
-      <div className="night absolute inset-0 z-0 overflow-hidden opacity-40 pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => {
-          const top = Math.random() * 100;
-          const left = Math.random() * 100;
-          const delay = Math.random() * 5;
-          return (
-            <div
-              key={i}
-              className="shooting_star"
-              style={{
-                top: `${top}%`,
-                left: `${left}%`,
-                animationDelay: `${delay}s`
-              }}
-            />
-          );
-        })}
-      </div>
+
+<section className="bg-background text-primaryDark py-24 px-8 md:px-16 lg:px-24 relative overflow-hidden">
 
       {/* Flackernder Neon-Schriftzug */}
       <h1
         ref={welcomeRef}
-        className="text-5xl md:text-6xl text-neon tracking-widest text-center mb-16 font-bold animate-neon-flicker z-10 relative"
+        className="text-5xl md:text-6xl tracking-widest text-center mb-16 font-kinddaily z-10 relative text-primaryDark"
       >
         WELCOME
       </h1>
@@ -157,18 +139,18 @@ export default function About() {
         </div>
 
         {/* Textbereich */}
-        <div ref={textRef} className="w-full md:max-w-[480px] md:w-1/2 text-lg font-mono bg-black/30 p-6 rounded-lg border border-white/10 backdrop-blur-md hover:shadow-lg transition-shadow duration-500 relative z-10">
-          <h2 className="text-3xl font-bold mb-4 text-gray-100">Über mich</h2>
-          <p className="mb-4 text-gray-300">
+        <div ref={textRef} className="w-full md:max-w-[480px] md:w-1/2 text-lg font-mono bg-accent1 p-6 hover:shadow-lg transition-shadow duration-500 relative z-10">
+          <h2 className="text-3xl font-bold mb-4 text-primaryDark">Über mich</h2>
+          <p className="mb-4 text-primaryDark">
             Hi, ich bin <span className="text-green-400">Nils</span> – ein ambitionierter <span className="text-pink-400">Webentwickler</span> aus <span className="text-blue-400">Hamburg</span>. Ich bin ausgebildeter Fachinformatiker für Anwendugsentwicklung. Kreative Desings und bewegende Animationen liegen mir besonders am Herzen.
           </p>
-          <p className="text-gray-300">
+          <p className="text-primaryDark">
             Diese <span className="text-green-400">Website</span>  dient als mein Port-Folio, im Grunde genommen <span className="text-blue-400"> meine Bewerbung</span> für meinen Traumjob in <span className="text-pink-400">deiner Firma!</span> 
           </p>
           <div className="flex justify-center mt-8">
             <button
               onClick={() => setShowKontakt(true)}
-              className="relative inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold text-base shadow-[0_0_16px_2px_rgba(56,189,248,0.7)] transition-all duration-300 hover:from-pink-500 hover:to-yellow-400 hover:scale-105 hover:shadow-[0_0_32px_6px_rgba(236,72,153,0.7)] focus:outline-none"
+              className="relative inline-flex items-center gap-2 px-5 py-2 rounded-full bg-background text-primaryDark font-bold text-base shadow transition-all duration-300 hover:bg-accent1 hover:scale-105 focus:outline-none"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0l-7.5-4.615A2.25 2.25 0 012.25 6.993V6.75" />

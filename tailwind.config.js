@@ -6,14 +6,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#000000",
-        textDark: "#E0E0E0",
+        primaryDark: "#223843",   // für Überschriften, Haupttext
+        background: "#EFF1F3",    // für Seitenhintergrund
+        accent1: "#DBD3D8",       // für Sektionen, Cards, leichte Flächen
+        accent2: "#D8B4A0",       // für Buttons, Icons, kleine Flächen
+        accent3: "#D77A61",       // für Call-to-Action, Hover, Highlights
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
         signature: ['Great Vibes', 'cursive'],
         boston: ['BOSTON CAPS', 'sans-serif'],
+        kinddaily: ['KINDDAILY', 'sans-serif'],
+        nasa: ['NASA', 'sans-serif'],
+        hype: ['HYPE', 'sans-serif'],
       },
       keyframes: {
         codeFlicker: {
@@ -42,11 +48,11 @@ module.exports = {
         neonFlicker: {
           '0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%': {
             textShadow:
-              '0 0 2px #0ff,'
-              + '0 0 4px #0ff,'
-              + '0 0 8px #0ff,'
-              + '0 0 16px #0ff,'
-              + '0 0 32px #0ff',
+              '0 0 2px #275DAD,'
+              + '0 0 4px #275DAD,'
+              + '0 0 8px #275DAD,'
+              + '0 0 16px #275DAD,'
+              + '0 0 32px #275DAD',
             opacity: 1,
       },
           '20%, 22%, 24%, 55%': {

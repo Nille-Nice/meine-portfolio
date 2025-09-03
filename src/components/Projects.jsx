@@ -61,27 +61,8 @@ export default function Projects() {
   }, []);
 
   return (
-    <section ref={sectionRef} name="projects" className="bg-black py-20 px-6 md:px-16 text-white font-mono flex flex-col justify-center items-center relative overflow-hidden">
-      {/* ✨ Shooting Stars Hintergrund */}
-      <div className="night absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => {
-          const top = Math.random() * 100;
-          const left = Math.random() * 100;
-          const delay = Math.random() * 5;
-          return (
-            <div
-              key={i}
-              className="shooting_star"
-              style={{
-                top: `${top}%`,
-                left: `${left}%`,
-                animationDelay: `${delay}s`
-              }}
-            />
-          );
-        })}
-      </div>
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-widest text-neon animate-neon-flicker relative z-10">
+    <section ref={sectionRef} name="projects" className="bg-background py-20 px-6 md:px-16 text-primaryDark font-mono flex flex-col justify-center items-center relative overflow-hidden">
+              <h2 className="text-3xl md:text-4xl font-kinddaily text-center mb-12 tracking-widest text-primaryDark relative z-10">
         LATEST PROJECTS
       </h2>
 
@@ -133,13 +114,13 @@ export default function Projects() {
         </div>
 
         {/* Projektbeschreibungen */}
-        <div className="w-full max-w-4xl mx-auto mt-8 text-sm md:text-base bg-black/30 p-6 rounded-lg backdrop-blur-md hover:shadow-lg transition-shadow duration-500 relative z-10">
+        <div className="w-full max-w-4xl mx-auto mt-8 text-sm md:text-base bg-accent1 p-6 hover:shadow-lg transition-shadow duration-500 relative z-10">
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-gray-300 mb-4"
+            className="text-primaryDark mb-4"
           >
             <span className="text-neon font-bold">Projekt 1:</span><br />
             In meiner Freizeit bastle ich an einem Projekt aus meinem musikalischen Umfeld. Für das <span className="text-green-400">Indie-Label ULMG music</span> entwickel ich eine Website mit integriertem <span className="text-pink-400">Shopify-Shop</span> für Merch. Die Seite funktioniert gleichzeitig als <span className="text-blue-400">Landingpage</span>, über die man direkt zu den Videos und <span className="text-neon">Spotify-Profilen</span> der einzelnen Künstler gelangt. Online ist das Ganze unter <a
@@ -156,7 +137,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-gray-300"
+            className="text-primaryDark"
           >
             <span className="text-neon font-bold">Projekt 2:</span><br />
             Mein zweites aktuelles Projekt dreht sich um die Webpräsenz eines <span className="text-blue-400">Informatik-Dozenten</span>, der für Unternehmen und Bildungsträger unterrichtet. Hier kümmere ich mich komplett um das <span className="text-pink-400">Frontend</span>. Noch wird fleißig an einer integrierten <span className="text-green-400">Lernplattform</span> gearbeitet – sobald die steht, geht die Seite live.

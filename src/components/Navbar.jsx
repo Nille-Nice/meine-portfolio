@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed nav-bar z-[100]">
+    <div className="flex justify-between items-center w-full h-20 px-4 text-primaryDark bg-background fixed nav-bar z-[100]">
       <div>
         <img src="/images/n-logo.png" alt="Nils Narten Logo" className="h-12 w-auto ml-2 opacity-75 " />
       </div>
@@ -26,7 +26,7 @@ export default function Navbar() {
         {links.map(({ id, name, to }) => (
           <li
             key={id}
-            className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200"
+            className="px-4 cursor-pointer capitalize font-medium text-primaryDark hover:text-accent3 hover:scale-105 duration-200"
           >
             <Link to={to} smooth duration={500}>{name}</Link>
           </li>
@@ -41,11 +41,11 @@ export default function Navbar() {
       </div>
 
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500 font-mono">
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-accent1 text-primaryDark font-mono">
           {links.map(({ id, name, to }) => (
             <li
               key={id}
-              className="px-4 cursor-pointer capitalize py-6 text-4xl"
+              className="px-4 cursor-pointer capitalize py-6 text-4xl hover:text-accent3"
             >
               <Link onClick={() => setNav(!nav)} to={to} smooth duration={500}>
                 {name}

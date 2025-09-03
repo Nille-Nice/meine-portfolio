@@ -14,6 +14,9 @@ import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// GSAP ScrollTrigger registrieren
+gsap.registerPlugin(ScrollTrigger);
+
 function NoiseSVGFilter() {
   return (
     <svg className="noise-svg-filter">
@@ -52,28 +55,8 @@ function App() {
   return (
     <>
       <NoiseSVGFilter />
-      <div className="relative">
+      <div className="relative bg-background">
         <Navbar />
-        {/* ✨ Shooting Stars Hintergrund */}
-        <div className="night">
-          {Array.from({ length: 20 }).map((_, i) => {
-            const top = Math.random() * 100;
-            const left = Math.random() * 100;
-            const delay = Math.random() * 5;
-            return (
-              <div
-                key={i}
-                className="shooting_star"
-                style={{
-                  top: `${top}%`,
-                  left: `${left}%`,
-                  animationDelay: `${delay}s`
-                }}
-              />
-            );
-          })}
-        </div>
-
         {/* Inhalt */}
         <Hero />
         <About />
