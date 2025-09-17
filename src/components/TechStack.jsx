@@ -30,30 +30,39 @@ export default function TechStack() {
     const section = sectionRef.current;
     if (!section) return;
 
-    // Animation für die Tech Stack Karten
-    skills.forEach((_, index) => {
-      const isFromLeft = index % 2 === 0;
-      
-      // Initiale Position setzen
-      gsap.set(cardRefs.current[index], {
-        x: isFromLeft ? '-100vw' : '100vw',
-        opacity: 0
+    const context = gsap.context(() => {
+      skills.forEach((_, index) => {
+        const element = cardRefs.current[index];
+        if (!element) return; // Guard: Ref ist noch nicht gesetzt
+
+        const isFromLeft = index % 2 === 0;
+
+        gsap.set(element, {
+          x: isFromLeft ? '-100vw' : '100vw',
+          opacity: 0
+        });
       });
 
-      // Animation mit ScrollTrigger
-      gsap.to(cardRefs.current[index], {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top 80%',
-          end: 'top 40%',
-          scrub: true,
-        }
+        gsap.to(element, {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            end: 'top 40%',
+            scrub: true,
+          }
+        });
       });
-    });
+    }, section);
+
+    return () => {
+      // Clean up GSAP/ScrollTrigger Instanzen beim Unmount
+      context.revert();
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
   }, []);
 
   return (
